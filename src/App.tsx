@@ -1,9 +1,9 @@
-import logo from './logo.svg'
-import { Counter } from './features/counter/Counter'
-import './App.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import logo from "./logo.svg"
+import { Counter } from "./features/counter/Counter"
+import "./App.css"
+import { ChakraProvider } from "@chakra-ui/react"
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   return (
     <ChakraProvider>
       <div className="App">
