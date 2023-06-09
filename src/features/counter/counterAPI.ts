@@ -2,7 +2,7 @@
 export async function fetchCount(amount = 1) {
   return await new Promise<{ data: number }>((resolve) =>
     setTimeout(() => {
-      resolve({ data: amount })
-    }, 500),
-  )
+      resolve({ data: amount });
+    }, 500)
+  );
 }
