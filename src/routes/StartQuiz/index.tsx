@@ -12,6 +12,7 @@ import {
   Button,
   Checkbox,
   Stack,
+  Grid,
 } from '@chakra-ui/react';
 import { type FormEventHandler } from 'react';
 
@@ -62,7 +63,7 @@ export function StartQuiz() {
 
             <InlineFormControl>
               <FormLabel>Tense:</FormLabel>
-              <Stack spacing="2" direction={['column', 'row']}>
+              <Grid gap="2" templateColumns="repeat(2, 1fr)">
                 <Checkbox colorScheme="blue" defaultChecked value="present">
                   Present
                 </Checkbox>
@@ -75,7 +76,7 @@ export function StartQuiz() {
                 <Checkbox colorScheme="blue" defaultChecked value="conditional">
                   Conditional
                 </Checkbox>
-              </Stack>
+              </Grid>
             </InlineFormControl>
           </Flex>
 
