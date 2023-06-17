@@ -13,6 +13,7 @@ import {
   Checkbox,
   Stack,
   Grid,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import { type FormEventHandler } from 'react';
 
@@ -77,6 +78,30 @@ export function StartQuiz() {
                   Conditional
                 </Checkbox>
               </Grid>
+            </InlineFormControl>
+
+            <InlineFormControl>
+              <FormLabel>Person/Number:</FormLabel>
+              <SimpleGrid columns={3} spacing={2}>
+                <Checkbox colorScheme="blue" defaultChecked value="1s">
+                  1 Singular
+                </Checkbox>
+                <Checkbox colorScheme="blue" defaultChecked value="2s">
+                  2 Singular
+                </Checkbox>
+                <Checkbox colorScheme="blue" defaultChecked value="3s">
+                  3 Singular
+                </Checkbox>
+                <Checkbox colorScheme="blue" defaultChecked value="1p">
+                  1 Plural
+                </Checkbox>
+                <Checkbox colorScheme="blue" defaultChecked value="2p">
+                  2 Plural
+                </Checkbox>
+                <Checkbox colorScheme="blue" defaultChecked value="3p">
+                  3 Plural
+                </Checkbox>
+              </SimpleGrid>
             </InlineFormControl>
           </Flex>
 
