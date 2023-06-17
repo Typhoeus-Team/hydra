@@ -1,10 +1,10 @@
 import { Container } from '@chakra-ui/react';
-import { StartQuizForm } from '../../features/quiz/StartQuizForm';
+import { Question } from '../../features/quiz/Question';
 
-export function StartQuiz() {
+export function Quiz() {
   return (
     <Container maxW="100%" centerContent py="8">
-      <StartQuizForm />
+      <Question />
     </Container>
   );
 }
