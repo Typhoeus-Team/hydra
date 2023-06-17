@@ -1,11 +1,11 @@
 import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import quizSlice from '../features/quiz/quizSlice';
+import { quizSlice } from '../models/quizSettings';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    quiz: quizSlice,
+    quiz: quizSlice.default,
   },
 });
 

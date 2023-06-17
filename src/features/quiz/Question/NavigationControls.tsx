@@ -1,32 +1,29 @@
 import { Button, Flex, Spacer } from '@chakra-ui/react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import {
-  completeQuiz,
-  nextQuestion,
-  previousQuestion,
-  selectCurrentQuestion,
-  selectQuizSettings,
-} from '../quizSlice';
 import { useNavigate } from 'react-router-dom';
+import { useQuizSettings, quizSlice } from '../../../models/quizSettings';
 
 export function NavigationControls() {
-  const currentQuestion = useAppSelector(selectCurrentQuestion);
-  const quizSettings = useAppSelector(selectQuizSettings);
+  const currentQuestion = useAppSelector(quizSlice.selectCurrentQuestion);
+  const quizSettings = useQuizSettings();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleNextQuestion = () => {
     if (currentQuestion < quizSettings.numQuestions) {
-      dispatch(nextQuestion());
+      dispatch(quizSlice.nextQuestion());
     } else {
-      dispatch(completeQuiz());
+      dispatch(quizSlice.completeQuiz());
       navigate('/quiz-results');
     }
   };
 
   return (
     <Flex>
-      <Button onClick={() => dispatch(previousQuestion())} isDisabled={currentQuestion <= 1}>
+      <Button
+        onClick={() => dispatch(quizSlice.previousQuestion())}
+        isDisabled={currentQuestion <= 1}
+      >
         Previous
       </Button>
       <Spacer />

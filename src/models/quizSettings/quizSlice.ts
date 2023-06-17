@@ -4,7 +4,7 @@ import { type RootState } from '../../app/store';
 export interface QuizState {
   currentQuestion: number;
   status: 'idle' | 'running' | 'finished';
-  settings: QuizSettings;
+  settings: QuizSettings | null;
   // Some kind of `questions` object
 }
 
@@ -13,14 +13,10 @@ interface QuizSettings {
   numQuestions: number;
 }
 
-function buildDefaultQuizSettings(): QuizSettings {
-  return { numQuestions: 10 };
-}
-
 const initialState: QuizState = {
   currentQuestion: 0,
   status: 'idle',
-  settings: buildDefaultQuizSettings(),
+  settings: null,
 };
 
 export const quizSlice = createSlice({

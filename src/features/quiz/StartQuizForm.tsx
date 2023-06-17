@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { type FormEventHandler } from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { startQuiz } from './quizSlice';
+import { quizSlice } from '../../models/quizSettings';
 import { useNavigate } from 'react-router-dom';
 
 export function StartQuizForm() {
@@ -27,7 +27,9 @@ export function StartQuizForm() {
     event.preventDefault();
 
     const form = new FormData(event.currentTarget);
-    dispatch(startQuiz({ numQuestions: parseInt((form.get('numQuestions') as string) ?? '10') }));
+    dispatch(
+      quizSlice.startQuiz({ numQuestions: parseInt((form.get('numQuestions') as string) ?? '10') })
+    );
     // Meh, would be cool to move this to a 'route action' but
     // resisting the urge until we know what the action really
     // needs to do.
