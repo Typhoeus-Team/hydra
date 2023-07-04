@@ -1,7 +1,6 @@
 import { Button, Flex, Heading } from '@chakra-ui/react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { useAppSelector } from '../app/hooks';
-import { quizSlice } from '../models/quizSettings';
+import { useQuizStatus } from '../models/quiz';
 
 export function Root() {
   const location = useLocation();
@@ -28,7 +27,7 @@ export function Root() {
 }
 
 function StartQuizButton() {
-  const quizStatus = useAppSelector(quizSlice.selectQuizStatus);
+  const quizStatus = useQuizStatus();
   if (quizStatus === 'running') {
     return null;
   }

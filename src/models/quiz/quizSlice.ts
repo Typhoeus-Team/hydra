@@ -57,6 +57,8 @@ export const {
   setCurrentQuestion,
 } = quizSlice.actions;
 
+export const actions = quizSlice.actions;
+
 export const selectCurrentQuestion = (state: RootState) => state.quiz.currentQuestion;
 export const selectQuizStatus = (state: RootState) => state.quiz.status;
 export const selectQuizSettings = (state: RootState) => state.quiz.settings;
